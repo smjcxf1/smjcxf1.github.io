@@ -1,28 +1,10 @@
-class:
-  class_name: 友情链接
-  link_list:
-    1:
-      name: 存在感消失的地方|ω•`)
-      link: https://akarin.dev
-      avatar: https://avatars0.githubusercontent.com/u/47057319
-      descr: 身处寒夜 把握星光✨
-    2:
-      name: Misaka
-      link: https://railgun.icu/
-      avatar: https://avatars.githubusercontent.com/u/52127603?s=160
-      descr: Misaka Mikoto
-    3:
-      name: vvmdx
-      link: https://vvmdx.github.io/
-      avatar: https://avatars.githubusercontent.com/u/75788310?v=4
-      descr: 无名大仙
-    4:
-      name: 勇者の小栈
-      link: https://www.ken-chy129.cn/
-      avatar: https://cdn.ken-chy129.cn/blog/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220521192649.jpg
-      descr: 七岁几胆敢预言自己,操一艘战机
-    5:
-      name: 永世隔绝的理想乡
-      link: https://shennoter.top
-      avatar: https://cravatar.cn/avatar/3c882856e45656a26415732789b6055b?s=200&test=1&d=mp&r=1658543264
-      descr: EL PSY KONGROOOOO
+- class_name: 0.推荐网站🍔
+  class_desc: 这里是最熟悉的小伙伴或者赞助商，当然是最前排啦
+  link_list: 
+    - name: Fomalhaut🥝
+      link: https://www.fomal.cc/
+      avatar: https://www.fomal.cc/assets/avatar.webp
+      descr: Future is now 🍭🍭🍭
+      siteshot: https://source.fomal.cc/siteshot/www.fomal.cn.jpg
+
+

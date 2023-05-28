@@ -14,8 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     let hideMenuIndex = ''
-    if (window.innerWidth < 768) hideMenuIndex = true
-    else hideMenuIndex = blogNameWidth + menusWidth + searchWidth > $nav.offsetWidth - 120
+    if (window.innerWidth <= 800) hideMenuIndex = true
+    // 这行会引起缩放异常，删掉
+    // else hideMenuIndex = blogNameWidth + menusWidth + searchWidth > $nav.offsetWidth - 120
 
     if (hideMenuIndex) {
       $nav.classList.add('hide-menu')
@@ -94,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
         document.execCommand('copy')
         if (GLOBAL_CONFIG.Snackbar !== undefined) {
-          btf.snackbarShow(GLOBAL_CONFIG.copy.success)
+          // btf.snackbarShow(GLOBAL_CONFIG.copy.success)
         } else {
           const prevEle = ctx.previousElementSibling
           prevEle.innerText = GLOBAL_CONFIG.copy.success
@@ -103,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       } else {
         if (GLOBAL_CONFIG.Snackbar !== undefined) {
-          btf.snackbarShow(GLOBAL_CONFIG.copy.noSupport)
+          // btf.snackbarShow(GLOBAL_CONFIG.copy.noSupport)
         } else {
           ctx.previousElementSibling.innerText = GLOBAL_CONFIG.copy.noSupport
         }
@@ -361,7 +362,9 @@ document.addEventListener('DOMContentLoaded', function () {
       // toc元素點擊
       $cardToc.addEventListener('click', e => {
         e.preventDefault()
-        const $target = e.target.classList.contains('toc-link')
+        const target = e.target.classList
+        if (target.contains('toc-content')) return
+        const $target = target.contains('toc-link')
           ? e.target
           : e.target.parentElement
         btf.scrollToDest(btf.getEleTop(document.getElementById(decodeURI($target.getAttribute('href')).replace('#', ''))), 300)
@@ -466,17 +469,16 @@ document.addEventListener('DOMContentLoaded', function () {
       if (nowMode === 'light') {
         activateDarkMode()
         saveToLocal.set('theme', 'dark', 2)
-        GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)
+        // GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)
       } else {
         activateLightMode()
         saveToLocal.set('theme', 'light', 2)
-        GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day)
+        // GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day)
       }
       // handle some cases
       typeof utterancesTheme === 'function' && utterancesTheme()
       typeof changeGiscusTheme === 'function' && changeGiscusTheme()
       typeof FB === 'object' && window.loadFBComment()
-      window.DISQUS && document.getElementById('disqus_thread').children.length && setTimeout(() => window.disqusReset(), 200)
       typeof runMermaid === 'function' && window.runMermaid()
     },
     showOrHideBtn: (e) => { // rightside 點擊設置 按鈕 展開
@@ -613,13 +615,9 @@ document.addEventListener('DOMContentLoaded', function () {
       $hideInline.forEach(function (item) {
         item.addEventListener('click', function (e) {
           const $this = this
-          const $hideContent = $this.nextElementSibling
-          $this.classList.toggle('open')
-          if ($this.classList.contains('open')) {
-            if ($hideContent.querySelectorAll('.fj-gallery').length > 0) {
-              btf.initJustifiedGallery($hideContent.querySelectorAll('.fj-gallery'))
-            }
-          }
+          $this.classList.add('open')
+          const $fjGallery = $this.nextElementSibling.querySelectorAll('.fj-gallery')
+          $fjGallery.length && btf.initJustifiedGallery($fjGallery)
         })
       })
     }

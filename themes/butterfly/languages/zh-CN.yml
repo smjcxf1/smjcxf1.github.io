@@ -44,7 +44,6 @@ search:
     hits_stats: '找到 ${hits} 条结果，用时 ${time} 毫秒'
 
   local_search:
-    label: 本地搜索
     input_placeholder: 搜索文章
     hits_empty: '找不到您查询的内容：${query}'
 
@@ -58,11 +57,12 @@ aside:
   articles: 文章
   tags: 标签
   categories: 分类
-  card_announcement: 公告
+  card_announcement: 公告栏
   card_categories: 分类
   card_tags: 标签
   card_archives: 归档
   card_recent_post: 最新文章
+  card_friend_link: 通讯录
   card_webinfo:
     headline: 网站资讯
     article_name: 文章数目
@@ -92,7 +92,7 @@ date_suffix:
   day: 天前
   month: 个月前
 
-donate: 打赏
+donate: 投喂作者
 share: 分享
 
 rightside:
@@ -104,6 +104,7 @@ rightside:
   scroll_to_comment: 直达评论
   setting: 设置
   aside: 单栏和双栏切换
+  chat: 聊天
 
 copy_copyright:
   author: 作者

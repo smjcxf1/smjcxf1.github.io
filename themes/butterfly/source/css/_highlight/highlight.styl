@@ -92,11 +92,10 @@ $code-block
     .expand
       position: absolute
       padding: .57em .7em
-      cursor: pointer
       transition: transform .3s
 
       & + .code-lang
-        left: 1.6em
+        left: 1.7em
 
       &.closed
         transition: all .3s
@@ -112,14 +111,13 @@ $code-block
 
     .copy-notice
       position: absolute
-      right: 2.1em
+      right: 2.4em
       opacity: 0
       transition: opacity .4s
 
     .copy-button
       position: absolute
       right: 14px
-      cursor: pointer
       transition: color .2s
 
       &:hover
@@ -160,7 +158,7 @@ $code-block
             transform: rotate(90deg) !important
 
           & ~ .copy-notice
-            right: 3.3em
+            right: 3.45em
 
           & ~ .copy-button
             right: 2.1em
@@ -177,7 +175,6 @@ $code-block
       background: var(--hlexpand-bg)
       text-align: center
       font-size: $code-font-size
-      cursor: pointer
 
       i
         padding: 6px 0

@@ -1,110 +1,119 @@
-#recent-posts
-  & > .recent-post-item:not(:first-child)
-    margin-top: 20px
+// #recent-posts
+//   & > .recent-post-item:not(:first-child)
+//     margin-top: 20px
 
-  & > .recent-post-item
-    @extend .cardHover
-    display: flex
-    flex-direction: row
-    align-items: center
-    overflow: hidden
-    height: 18em
+//   & > .recent-post-item
+//     @extend .cardHover
+//     display: flex
+//     flex-direction: row
+//     align-items: center
+//     overflow: hidden
+//     height: 18em
 
-    +maxWidth768()
-      flex-direction: column
-      height: auto
+//     +maxWidth768()
+//       flex-direction: column
+//       height: auto
 
-    &:hover
-      img.post_bg
-        transform: scale(1.1)
+//     &:hover
+//       img.post_bg
+//         transform: scale(1.1)
 
-    &.ads-wrap
-      display: block !important
-      height: auto !important
+//     &.ads-wrap
+//       display: block !important
+//       height: auto !important
 
-    .post_cover
-      overflow: hidden
-      width: 44%
-      height: 100%
+//     .post_cover
+//       overflow: hidden
+//       width: 44%
+//       height: 100%
 
-      +maxWidth768()
-        width: 100%
-        height: 230px
+//       +maxWidth768()
+//         width: 100%
+//         height: 230px
 
-      img.post_bg
-        @extend .imgHover
+//       img.post_bg
+//         @extend .imgHover
 
-      &.right
-        order: 1
+//       &.right
+//         order: 1
 
-        +maxWidth768()
-          order: 0
+//         +maxWidth768()
+//           order: 0
 
-    & >.recent-post-info
-      padding: 0 40px
-      width: 57%
+//     & >.recent-post-info
+//       padding: 0 40px
+//       width: 57%
 
-      +maxWidth768()
-        padding: 20px 20px 30px
-        width: 100%
+//       +maxWidth768()
+//         padding: 20px 20px 30px
+//         width: 100%
 
-      &.no-cover
-        width: 100%
+//       &.no-cover
+//         width: 100%
 
-        +maxWidth768()
-          padding: 30px 20px
+//         +maxWidth768()
+//           padding: 30px 20px
 
-      & > .article-title
-        @extend .limit-more-line
-        color: var(--text-highlight-color)
-        font-size: 1.72em
-        line-height: 1.4
-        transition: all .2s ease-in-out
-        -webkit-line-clamp: 2
+//       & > .article-title
+//         @extend .limit-more-line
+//         color: var(--text-highlight-color)
+//         font-size: 1.72em
+//         line-height: 1.4
+//         transition: all .2s ease-in-out
+//         -webkit-line-clamp: 2
 
-        +maxWidth768()
-          font-size: 1.43em
+//         +maxWidth768()
+//           font-size: 1.43em
 
-        &:hover
-          color: $text-hover
+//         &:hover
+//           color: $text-hover
 
-      & > .article-meta-wrap
-        margin: 6px 0
-        color: $theme-meta-color
-        font-size: 90%
+//       & > .article-meta-wrap
+//         margin: 6px 0
+//         color: $theme-meta-color
+//         font-size: 90%
 
-        & > .post-meta-date
-          cursor: default
+//         & > .post-meta-date
+//           cursor: default
 
-        .sticky
-          color: $sticky-color
+//         .sticky
+//           color: $sticky-color
 
-        i
-          margin: 0 4px 0 0
+//         i
+//           margin: 0 4px 0 0
 
-        .article-meta-label
-          if hexo-config('post_meta.page.label')
-            padding-right: 4px
-          else
-            display: none
+//         .fa-spinner
+//           margin: 0
 
-        .article-meta-separator
-          margin: 0 6px
+//         .article-meta-label
+//           if hexo-config('post_meta.page.label')
+//             padding-right: 4px
+//           else
+//             display: none
 
-        .article-meta-link
-          margin: 0 4px
+//         .article-meta-separator
+//           margin: 0 6px
 
-        if hexo-config('post_meta.page.date_format') == 'relative'
-          time
-            display: none
+//         .article-meta-link
+//           margin: 0 4px
 
-        a
-          color: $theme-meta-color
+//         if hexo-config('post_meta.page.date_format') == 'relative'
+//           time
+//             display: none
 
-          &:hover
-            color: $text-hover
-            text-decoration: underline
+//         a
+//           color: $theme-meta-color
 
-      & > .content
-        @extend .limit-more-line
-        -webkit-line-clamp: 2
+//           &:hover
+//             color: $text-hover
+//             text-decoration: underline
+
+//       & > .content
+//         @extend .limit-more-line
+//         -webkit-line-clamp: 2
+
+
+if hexo-config('index_card_style') == 'slidecard'
+  @import './_index_card_style/slidecard'
+else if hexo-config('index_card_style') == 'multicard'
+  @import './_index_card_style/multicard'

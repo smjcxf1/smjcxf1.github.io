@@ -1,4 +1,5 @@
-script.
+//- script.
+script(async).
   var preloader = {
     endLoading: () => {
       document.body.style.overflow = 'auto';
@@ -11,3 +12,5 @@ script.
     }
   }
   window.addEventListener('load',preloader.endLoading())
+  setTimeout(function(){preloader.endLoading();}, 5000);
+  document.getElementById('loading-box').addEventListener('click',()=> {preloader.endLoading()})

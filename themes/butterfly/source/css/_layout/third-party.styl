@@ -65,6 +65,9 @@ if hexo-config('waline.bg')
   margin: 0 0 20px
   text-align: center
 
+  & > svg
+    height: 100%
+
 .utterances,
 .fb-comments iframe
   width: 100% !important
@@ -86,6 +89,7 @@ mjx-container[display],
 .has-jax
   overflow-x: auto
   overflow-y: hidden
+  line-height: normal !important
 
 .aplayer
   color: $font-black
@@ -106,3 +110,6 @@ mjx-container[display],
 
           &:before
             content: none
+
+.snackbar-css
+  border-radius: 5px !important

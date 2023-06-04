@@ -1,6 +1,6 @@
 ---
 title: JavaScript ES(6-11)全版本语法
-categories: 分享
+categories: 演示
 keywords: JavaScript
 top_img: /img/1555172.webp
 cover: /img/1555154.png

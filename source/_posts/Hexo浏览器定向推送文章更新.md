@@ -6,7 +6,7 @@ date: 2022-10-05 00:00:00
 updated: 2023-04-22 20:25:00
 tags: [博客, 工具]
 keywords: [博客, 工具, hexo, web push, webpushr]
-categories: 博客
+categories: 数据库
 description: 这一次，CC的部落格可以根据读者订阅主题定向推送了，并且实现了NPM插件化
 cover: https://pic1.afdiancdn.com/user/8a7f563c2e3811ecab5852540025c377/common/d2a947d48815ed24936a919873b97841_w1366_h768_s31.png
 id: 37
